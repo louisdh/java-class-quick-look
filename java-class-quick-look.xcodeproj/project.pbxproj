@@ -8,16 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		BEC300461F50873600263200 /* GenerateThumbnailForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = BEC300451F50873600263200 /* GenerateThumbnailForURL.c */; };
-		BEC300481F50873600263200 /* GeneratePreviewForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = BEC300471F50873600263200 /* GeneratePreviewForURL.c */; };
+		BEC300481F50873600263200 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC300471F50873600263200 /* GeneratePreviewForURL.m */; };
 		BEC3004A1F50873600263200 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BEC300491F50873600263200 /* main.c */; };
+		BEC300551F50888D00263200 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC300541F50888D00263200 /* CoreFoundation.framework */; };
+		BEC300571F5088C500263200 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC300561F5088C500263200 /* AppKit.framework */; };
+		BEC300591F5088D100263200 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC300581F5088D100263200 /* QuickLook.framework */; };
+		BEC3005B1F5088D500263200 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC3005A1F5088D500263200 /* ApplicationServices.framework */; };
+		BEC3005D1F5088DB00263200 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC3005C1F5088DB00263200 /* CoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BEC300421F50873600263200 /* java-class-quick-look.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "java-class-quick-look.qlgenerator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC300451F50873600263200 /* GenerateThumbnailForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GenerateThumbnailForURL.c; sourceTree = "<group>"; };
-		BEC300471F50873600263200 /* GeneratePreviewForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GeneratePreviewForURL.c; sourceTree = "<group>"; };
+		BEC300471F50873600263200 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		BEC300491F50873600263200 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		BEC3004B1F50873600263200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEC300521F50887A00263200 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BEC300541F50888D00263200 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		BEC300561F5088C500263200 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BEC300581F5088D100263200 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		BEC3005A1F5088D500263200 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		BEC3005C1F5088DB00263200 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +36,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC3005D1F5088DB00263200 /* CoreServices.framework in Frameworks */,
+				BEC3005B1F5088D500263200 /* ApplicationServices.framework in Frameworks */,
+				BEC300591F5088D100263200 /* QuickLook.framework in Frameworks */,
+				BEC300571F5088C500263200 /* AppKit.framework in Frameworks */,
+				BEC300551F50888D00263200 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +52,7 @@
 			children = (
 				BEC300441F50873600263200 /* java-class-quick-look */,
 				BEC300431F50873600263200 /* Products */,
+				BEC300511F50887A00263200 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,11 +68,24 @@
 			isa = PBXGroup;
 			children = (
 				BEC300451F50873600263200 /* GenerateThumbnailForURL.c */,
-				BEC300471F50873600263200 /* GeneratePreviewForURL.c */,
+				BEC300471F50873600263200 /* GeneratePreviewForURL.m */,
 				BEC300491F50873600263200 /* main.c */,
 				BEC3004B1F50873600263200 /* Info.plist */,
 			);
 			path = "java-class-quick-look";
+			sourceTree = "<group>";
+		};
+		BEC300511F50887A00263200 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEC3005C1F5088DB00263200 /* CoreServices.framework */,
+				BEC3005A1F5088D500263200 /* ApplicationServices.framework */,
+				BEC300581F5088D100263200 /* QuickLook.framework */,
+				BEC300561F5088C500263200 /* AppKit.framework */,
+				BEC300541F50888D00263200 /* CoreFoundation.framework */,
+				BEC300521F50887A00263200 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEC300461F50873600263200 /* GenerateThumbnailForURL.c in Sources */,
-				BEC300481F50873600263200 /* GeneratePreviewForURL.c in Sources */,
+				BEC300481F50873600263200 /* GeneratePreviewForURL.m in Sources */,
 				BEC3004A1F50873600263200 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,12 +268,14 @@
 		BEC3004F1F50873600263200 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
 				INFOPLIST_FILE = "java-class-quick-look/Info.plist";
 				INSTALL_PATH = /Library/QuickLook;
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.java-class-quick-look";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Debug;
@@ -251,12 +283,14 @@
 		BEC300501F50873600263200 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
 				INFOPLIST_FILE = "java-class-quick-look/Info.plist";
 				INSTALL_PATH = /Library/QuickLook;
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.java-class-quick-look";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Release;
