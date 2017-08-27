@@ -14,27 +14,16 @@ void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
    This function's job is to create preview for designated file
    ----------------------------------------------------------------------------- */
 
-OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options)
-{
+OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options) {
 	
 	@autoreleasepool {
-		if (QLPreviewRequestIsCancelled(preview))
+		
+		if (QLPreviewRequestIsCancelled(preview)) {
 			return noErr;
+		}
 		
+		NSString *fileName = (__bridge NSString *)CFURLGetString(url);
 		
-		NSDictionary *previewProperties = @{
-			(NSString *)kQLPreviewPropertyWidthKey      : @700,
-			(NSString *)kQLPreviewPropertyHeightKey     : @800
-		};
-		
-		// Get size of current File
-		NSFileManager *man = [NSFileManager defaultManager];
-		NSURL *file_url = (__bridge NSURL *)(url);
-		NSDictionary *attrs = [man attributesOfItemAtPath: [file_url path] error: NULL];
-		
-		NSString *fileName = CFURLGetString(url);
-		
-		int pid = [[NSProcessInfo processInfo] processIdentifier];
 		NSPipe *pipe = [NSPipe pipe];
 		NSFileHandle *file = pipe.fileHandleForReading;
 		
@@ -52,7 +41,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 		
 		NSMutableString *text = [[NSMutableString alloc] initWithString:grepOutput];
 		
-		NSDictionary *properties = @{ // properties for the HTML data
+		NSDictionary *properties = @{
 			(__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey : @"UTF-8",
 			(__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/plain" };
 		
@@ -64,7 +53,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
     return noErr;
 }
 
-void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview)
-{
+void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview) {
+	
     // Implement only if supported
 }
