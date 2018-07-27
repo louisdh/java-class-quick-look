@@ -28,7 +28,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 		NSFileHandle *file = pipe.fileHandleForReading;
 		
 		NSTask *task = [[NSTask alloc] init];
-		task.launchPath = @"/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/bin/javap";
+		task.launchPath = @"/usr/bin/javap";
 		task.arguments = @[@"-c", fileName];
 		task.standardOutput = pipe;
 		
